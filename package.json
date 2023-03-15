@@ -1,0 +1,27 @@
+{
+  "name": "treinamento-cypress-ilab",
+  "version": "1.0.0",
+  "description": "Website: https://www.ploomes.com/versao-trial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:google": "cypress run --browser chrome --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelluzo/treinamento-cypress-ilab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelluzo/treinamento-cypress-ilab/issues"
+  },
+  "homepage": "https://github.com/raphaelluzo/treinamento-cypress-ilab#readme",
+  "devDependencies": {
+    "cypress": "^12.8.0"
+  
+  }
+
+}
