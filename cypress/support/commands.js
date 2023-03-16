@@ -17,8 +17,26 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get("#Bt_Login").click()
     cy.get(".jYWYCm .span").should("be.visible")
  })
-//
-//
+
+import { faker } from '@faker-js/faker/locale/pt_BR';
+Cypress.Commands.add('novocliente', () => { 
+    // Bt Novo
+    cy.get(".sc-papXJ").click()
+    // Novo Cliente
+    cy.get("button:nth-of-type(4)").click()
+    // Campo Nome
+    cy.get("[name='contact_name']").type(faker.name.fullName())
+    // Campo Telefone
+    cy.get("[ng-model='model.PhoneNumber']").type(faker.phone.number("219########"))
+    // Campo Email
+    cy.get("[name='contact_email']").type(faker.internet.email())
+    // Campo Cargo
+    cy.get("[api-url='Roles'] [placeholder]").type("Gerente", {delay:500}).type("{downArrow}").type("{enter}")
+    // Clicar no bt salvar
+    cy.get(".button-action").click()
+    // Verificacao
+    cy.contains(".single-user-badge > .light-badge > .text-darkest-neutral > .align-middle", "Raphael").should("be.visible")
+ })
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
